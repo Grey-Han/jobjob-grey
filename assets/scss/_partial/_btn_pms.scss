@@ -1,0 +1,45 @@
+button, 
+.button{
+    border:1px solid $mainColor_pms;
+    background-color: $mainColor_pms;
+    
+    &.bdType{
+        color: $btnBd_pms;
+        border: 1px solid $btnBd_pms;
+    }
+    &.rBdType{
+        color: $error;
+        background-color: $white;
+        border: 1px solid $error;
+        &:disabled,
+        &.disabled{
+            opacity: 0.5;
+        }
+    }
+
+    &.onlyIco{
+        &.midSize{
+            width: rem(30);
+            line-height: rem(30);
+            height: rem(30);
+        }
+    }
+
+    //bg상태버튼
+    &.save{
+        background: $mainColor_pms;
+    }
+}
+
+.label{
+    &.si{
+    color: $labelTxt1_pms;
+    background: $labelBg1_pms;
+    border: 1px solid $labelBd1_pms;
+    }
+    &.sm{
+        color: $labelTxt2_pms;
+        background: $labelBg2_pms;
+        border: 1px solid $labelBd2_pms;
+    }
+}

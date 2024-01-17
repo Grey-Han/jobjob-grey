@@ -1,0 +1,352 @@
+
+.accWrap{
+    margin-top: rem(40);
+    //모집공고 관리
+    &.flatType{ 
+        margin-top: 0;
+        .accBox{
+            padding: 0;
+            border-radius: 0;
+            border: 0;
+            &.is-active{
+                border-bottom: 1px solid $accBorderBottom;
+                .accHead{
+                    background: $selHover;
+                    border-bottom:0;
+                }
+                i.arrow{
+                    background-position: -100px -120px;
+                    vertical-align: 2px;
+                }
+            }
+            &.disabled{
+                opacity: 1;
+                .accHead{
+                    cursor: not-allowed;
+                    color: $addHeadGray;
+                }
+                i.arrow{
+                    background-position: -80px -100px;
+                }  
+            }
+            &.nodata{
+                height: rem(100);
+            }
+            & + .accBox{
+                margin-top: 0;
+            }
+            i.arrow{
+                margin-right: rem(10);
+            }
+        }
+        .accHead{
+            padding: rem(16) rem(20) rem(16) rem(12);
+            border-bottom: 1px solid $accBorderBottom;
+            cursor: pointer;
+            .prefix{
+                width: 85%;
+                .round{
+                    width: rem(62);
+                    font-size: rem(13);
+                    color: $cancel;
+                }
+                .field{
+                    width: rem(106);
+                    font-size: rem(14);
+                    color: $mainColor;
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+    //마이크로사이트
+    &.indexType{
+        .accBox{
+            border-radius: 0;
+            border:0;
+            border-bottom:1px solid $layoutColor;
+            position: relative;
+            // overflow: visible;
+            &:last-child{
+                border-bottom:0;
+            }
+            &.is-active{                
+                .close{
+                    &::after{
+                        transform: translate(-50%, -50%) rotate(180deg);
+                    }
+                }
+            }
+            & + .accBox{
+                margin-top: 0;
+            }   
+            .accHead{
+                padding: rem(12) 0;
+            }
+        }
+        .accInner{
+            .innerList{
+                align-items: flex-start;
+                font-size: 15px; //0913 J 14 -> 15수정
+                cursor: initial;
+                > ul{
+                    display: block;
+                    width: 48%;
+                    li{
+                        align-items: flex-start;
+                    }
+                }
+            }
+        }
+        .close{
+            width: rem(60);
+            height: rem(17);
+            box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+            border-top: rem(6) solid $white;
+            position: absolute;
+            left: 50%;
+            bottom: -13px;
+            transform: translateX(-50%);
+            z-index: 1;
+            &::after{
+                content: "";
+                width: rem(12);
+                height: rem(6);
+                background-image: url(../img/icoSelect.png);
+                // background-position: -120px -120px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+
+.accBox{
+    padding: rem(12) 0;
+    background: $white;
+    border-radius: rem(6);
+    border:1px solid $layoutColor;
+    // overflow: hidden;  
+    &.is-active{
+        padding-bottom: rem(10);
+        border:1px solid $mainColor;
+        i.smPlus{
+            height: rem(2);
+            background-position: -120px -100px;
+        }
+        .accInner{
+            display: block;
+        }
+    }
+    & + .accBox{
+        margin-top: rem(12);
+    }   
+    &:last-of-type{
+        margin-bottom: rem(15);
+    }
+    // & + .accBox:last-child{ //0913 J 추가
+    //     margin-bottom: rem(15);
+    // }  
+    
+    .nodata{
+        // padding: rem(30);
+        flex-direction: column;
+        line-height: rem(50);
+        button{
+            width: auto;
+            padding: 0 15px;
+        }
+    }
+    .prefix{width: 80%;}
+    .prefix,
+    .suffix{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .projTit{
+        @include ellipsis;
+        align-items: center;
+        gap: 4px;
+        width: auto;
+        max-width: 75%;
+        // max-width: 90%;
+        // font-weight: 500; //0913 J bold -> 500 수정
+        font-weight: 600;
+        font-size: rem(17);
+        line-height: 1.2;
+        cursor: pointer;
+        .round{
+            // margin-right: rem(10);
+            // margin-top: 2px;
+            width: rem(62);
+            color: $cancel;
+        }
+        i{
+            margin-right: 4px;
+        }
+    }
+    .signDate{
+        color: $accepGray; //0913 J 수정
+        font-size: rem(14); //0913 J 추가
+        & + .round{
+            margin-left: rem(30);
+        }
+        & + input + label{
+            margin-left: rem(10);
+        }
+    }
+}
+
+.accHead{
+    @include sideArray;
+    gap: 20px;
+    padding: rem(12) rem(25);
+    .suffix{
+        // word-break: keep-all;
+        // text-align: right;
+        color: $accSuffixGray;
+        .onlyIco{
+            // margin-left: rem(36);
+            margin-left: rem(24);
+            min-width: rem(32);
+            width: rem(32);
+            line-height: rem(32);
+            height: rem(32);
+        }
+    }
+} 
+
+.accInner{
+    display: none;
+    //모집공고관리
+    &.infoType{ 
+        .innerList{
+            padding: 0 rem(30);
+            > ul{                
+                width: 100%;
+                display: grid;
+                grid-template-columns: 69% 30%;
+                padding: rem(20) 0;
+                border-bottom: 1px solid $inputGray;
+            }
+            .suffix{
+                justify-self: end;
+            }      
+            .projObj{
+                gap: 4px;
+                .round{
+                    width: rem(62);
+                    color: $cancel;
+                }
+            }
+            .projManager{
+                @include ellipsis;
+                display: block;
+                width: auto;
+                max-width: 90%;
+                font-weight: 500;
+            }
+            .projInfo{
+                font-size: rem(14);
+            }
+        }       
+        &:last-child{
+            ul{
+                border-bottom:0;
+            }
+        }    
+    }
+}
+
+.innerList{
+    @include sideArray;
+    padding: rem(10) rem(25);
+    cursor: pointer;
+    .prefix{
+        width: 70%;
+        color: $accPrefixGray;
+        .field{
+            // margin-right: 10px; //0913 J수정
+            // width: rem(106); //0913 J수정
+            width: rem(113);
+            font-size: rem(14); //0913 J수정
+            color: $mainColor; //0913 J수정
+            //font-weight:500; 0913 J추가
+        }
+        .round{
+            // margin-right: rem(10);
+            width: rem(62);
+            //font-size: rem(13); //0913 J추가
+            color: $cancel;
+        }
+    }
+    .innerProj,
+    .innerResume{
+        @include ellipsis;
+        // width: 84%;
+        width: auto;
+        max-width: 75%;
+        line-height: 1.2;
+    }
+    .suffix{
+        font-size: rem(14);
+        //font-weight: 500;
+        li{
+            position: relative;
+            &::before{
+                content:'';
+                width: 1px;
+                height: 16px;
+                background: $layoutColor;
+                position: absolute;
+                top: 8px;
+                left: -7px;
+            }
+            &:first-child{
+                &::before{
+                    display: none;
+                }
+            }
+            .mainC{
+                margin-left: rem(5);
+            }
+        }
+    }
+    ul{
+        display: flex;
+        gap: 15px; 
+        li{
+            display: flex;
+            align-items: center;
+            line-height: 32px;
+        }
+        p{
+            flex-shrink: 0;
+            width: rem(80);
+            text-align: left;
+            color: $subGray;
+            font-weight: 500;
+            position: relative;
+            &::before{
+                content:'';
+                width: 4px;
+                height: 4px;
+                background: $dotGray;
+                border-radius: 50%;
+                position: absolute;
+                top: 14px;
+                left: -10px;
+            }
+        }   
+        span{
+            text-align: left;
+            &.label{
+                text-align: center;
+            }
+        }
+    }
+}

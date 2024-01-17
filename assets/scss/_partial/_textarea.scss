@@ -1,0 +1,85 @@
+/* TEXTAREA */
+textarea{
+    width: 100%;
+    vertical-align: middle;
+    font-size: rem(14);
+    padding: rem(5) rem(10);
+    border-radius: rem(4);
+    border:1px solid $inputGray;   
+    resize: none; 
+    &::placeholder{
+        color: $placeholder;
+        font-size: rem(14);
+    }
+    &:focus{        
+        outline: 1px solid $mainColor;
+    }
+    &:read-only{
+        color: $inputGray;
+        background: $inputDisable;
+        &:focus{        
+            border: 1px solid $inputGray;
+            outline: 0;
+        } 
+    }
+    &:disabled{
+        color: $inputGray;;
+        background: $inputDisable;
+    }
+    & + .counter{
+        font-size: rem(14);
+        color: $subInfo;
+        text-align: right;
+        margin-top: rem(10);
+        label{
+            min-width: auto !important;
+        }
+    }
+    &.oneLine{
+        padding: rem(7);
+    }
+    &.autoHeight{
+        min-height: rem(72);
+    }
+    &.wideSize{
+        width: rem(440);
+    }
+    &.laSize{
+        width: rem(500);
+    }
+    &.fullSize{
+        width: 100%;
+    }
+    &.editType{
+        padding: rem(4) rem(2);
+    }
+    &.need{
+        border:1px solid $error;
+    }
+}
+
+
+//메모 - 마이프로젝트, 마이피플, 회원상세
+.textForm{
+    display: none;
+    margin-top: rem(10);
+    padding: rem(5);
+    border-radius: rem(4);
+    border:1px solid $inputGray; 
+    &.is-active{
+        display: block;
+    }
+    textarea{ 
+        border:1px solid $layoutColor;    
+        @include scroll_0;    
+        transition: all .3s;
+    }
+}
+.btnWrap{
+    text-align: center;
+    margin-top: rem(10);
+    button{
+        width: rem(60);
+        line-height: rem(30);
+    }
+}

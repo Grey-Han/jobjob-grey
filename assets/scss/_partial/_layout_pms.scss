@@ -1,0 +1,82 @@
+.wrapper{  
+    &.login{
+        background: $loginBg_pms;
+        .loginTop{           
+            min-height: 85vh;
+            align-items: center;
+            .loginBox{
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.125);
+                position: relative;
+                z-index: 1;
+            }   
+        } 
+        footer{
+            margin-top: -25vh;
+            padding-top: rem(120);
+            height: 40vh;
+            background-image: url(../img/pms/bgLogin.png);
+            p{
+                color: $loginFooter_pms;
+                & + p{
+                    margin-top: rem(30);
+                    color: $loginFooter2_pms;
+                }
+            }
+        }
+    }
+}
+
+//page_dashboard.scss 이동
+// .contWrapper {
+//     .dashboard{
+//} 
+
+// GNB 클릭, 마우스오버 이벤트
+.layoutWrapper{
+    &.is-active,    //is-active는 없애야함-ys
+    &.is-hover{
+        .gnbWrapper{
+            background:$white;
+        }
+        .navWrapper{
+            > ul{
+                > li{                    
+                    &::before{
+                        background:$navArrow_pms;
+                    }
+                    &::after{
+                        background: $navArrow_pms;
+                    }   
+                }
+            }
+        }
+    }    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

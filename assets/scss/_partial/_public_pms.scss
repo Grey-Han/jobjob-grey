@@ -1,0 +1,631 @@
+
+//메인컬러
+$mainColor : #0460d2;
+$bgColor : #f2f2f7;
+$layoutColor : #cccccc;
+//$layoutColor : #ff0000;
+
+$gradiTop: $mainColor;
+$gradiMid: #1983cb;
+$gradiBom: #47b892;
+
+
+$gradient: $gradiTop, $gradiMid, $gradiBom; 
+@mixin gradient($direction, $gradient) { 
+    background: -webkit-linear-gradient($direction, $gradient);
+    background: -moz-linear-gradient($direction, $gradient);
+    background: -o-linear-gradient($direction, $gradient);
+    background: linear-gradient($direction, $gradient);  
+}
+
+//상태컬러
+$error : #ff1236;
+$disable : #666666;
+// $subInfo : $disable;
+$subInfo : #444;
+
+$highlight : #009ce0;
+$onGoing : #ffc812;
+$checking : #ef9914;
+$cancel : #a6a6b6;
+$delay : $error;
+$safe : #08c97c;
+
+// $gnbGreen : #89c895;
+$titGreen : #97926d;
+
+//모노톤
+$black : #000000;
+$gray : #666666;
+$subGray : #8f8f8f;
+$lightGray : #fbfbfb;
+$white : #fff;
+$memBg : #dde2e9;
+$beigeTit : #838ca3;
+$modalBg : #f1f2f3;
+
+$gnbGray : #8c98a6;
+$activeGray : #dddddd;
+$inputGray : $layoutColor;
+$inputDisable : #f8f8f8;
+// $placeholder : $subGray; 230623 진해서 바꿈
+$placeholder : $inputGray;
+$placeGray : #a5a5ac;
+$boxGray : $cancel;
+$boxHead : #aaa;
+$arrowGray : #e6e6eb;
+$dotGray : #c8c8c8;
+$offGray : #ededed;
+
+$searchbtnGray : #6b6b6b;
+$accPrefixGray : #4b4b4b;
+$accSuffixGray : #676767;
+$addHeadGray : #999;
+$accBorderBottom : #b6b6b6;
+$accListBorder : #dbdbdb;
+$accDate : #b0a6b6;
+$projBox : #e3e3e7;
+$projBoxBorder : #dcdcdc;
+$chipGray : #dce1e6; //0913 J 수정
+$chipFont : #495762; //0913 J 추가
+$accepGray : #aaa;
+
+$boxTitBg : #f2f2f2;
+
+$stepTxt : #949393;
+$stepBg : #f5f6f9;
+
+$tableSort: $boxTitBg;
+$tableBgGray : $gnbGray;
+$tableBorder : #dddddd;
+$tableGray : $gray;
+$tableHover : #f3f4f7; // eaf2f8 -> e2eaf5 -> f1f2f5 -> e2eaf5
+$tfootGray : #e6e6e6;
+$tFootSort: #c1c3c5;
+
+$tabGray : $layoutColor;
+
+$btnGray : #8a8a8c;
+$btnBdGray : $btnGray;
+$btnBgGray : #929295;
+$turnKey : $activeGray;
+
+$filterBg : #f3f8fb;
+$filterBd : #c1cdd5;
+
+$selGray : $cancel;
+$selOptList : $layoutColor;
+$selHover : #f3f4f7; //e5effa ->e2eaf5 -> f1f2f5
+$btnActive : #a9bfd5;
+
+$memLayout : $layoutColor;
+$jobLayout : $layoutColor;
+
+$titleGray : $cancel;
+$condiGray : $placeholder;
+$systemGray : $placeholder;
+$tooltipGray : #58585e;
+
+$scrollTrack : $bgColor;
+$scrollThumb : $layoutColor;
+
+$footerGray : #ababba;
+
+
+
+$fileBg : #f4f4f4;
+$fileGray : #888888;
+$filePopSub : #979797;
+
+$offerBg : $fileBg;
+
+
+
+//마이크로사이트
+$subBlue : #0969d1;
+$subGray2 : #9595a6;
+
+$subTitGray : #7d7d7d;
+$thGray : #a3aab5;
+$thBg : #eff5fb;
+$tdBd : #c4d6ee;
+$tableSub : #5f778f;
+$yellowLight: #fee32c;
+$blueLight: #c4ddf4;
+
+$footerGray2 : #595959;
+$copyRight : #9c9b9b;
+
+
+
+
+//---------pms--------//
+$header_pms : #205391;
+$headerSub : #a2bce2;
+$mainColor_pms : #2a55aa;
+
+$loginBg_pms : #f8f8f8;
+$loginFooter_pms: #b4bfd2;
+$loginFooter2_pms: #739acb;
+
+$navArrow_pms : #808080;
+
+$divideBg_pms : #f9f9f9;
+
+$h1Sub_pms : #58585a;
+
+$btnBd_pms: #3a6ccf;
+
+$labelTxt1_pms: #218dbc;
+$labelBg1_pms: #e1f1f8;
+$labelBd1_pms: #cfe3ec;
+
+$labelTxt2_pms: #8073b3;
+$labelBg2_pms: #f3f1f9;
+$labelBd2_pms: #ced1dd;
+
+$tab_pms : #2a55aa;
+
+$accTxt_pms : #444444;
+$accHBg_pms : #e2eaf5;
+
+$th_pms : #8c98a6;
+$bodyTh_pms : #e2eaf5; //f5f5f5 -> #e2eaf5
+$tfoot_pms : #eee;
+
+$thSales_pms : #61519f;
+$thBuy_pms : #3e9894;
+$thInner_pms : #5b6f87;
+
+$thSales2_pms : #8483b4;
+$thBuy2_pms : #83acb4;
+$thInner2_pms : #7d8da0;
+
+$trClk_pms : #eaf0f8;
+$trFilter_pms : #f8f2f2;
+
+$h5Under_pms: #7a7a7a;
+
+$a_pms : #2a73cb;
+
+$highlight_pms : #5aa2ef;
+
+$dashboardTit_pms : #1f60af;
+$dashboardSub_pms : #ababab;
+$notiTit_pms : #1e6ee7;
+$notiBoardBd_pms : #dee8f0; 
+$notiBoardBg_pms : #eaf2f8; 
+
+// $part_sapBiz : #304e94;
+// $part_sapStr : #0d60c8;
+// $part_sapUni : #17a6f2;
+// $part_exBiz : #24c9cb;
+// $part_fuFus : #13be6f;
+// $part_platf : #8c98a6;
+// $part_cloud : #575d64;
+
+$part01 : #453189;
+$part02 : #234595;
+$part03 : #0d60c8;
+$part04 : #17a6f2;
+$part05 : #24c9cb;
+$part06 : #4ed87a;
+$part07 : #1ba274;
+$part08 : #8c98a6;
+$part09 : #575d64;
+
+//예비
+$part10 : #d0ed77;
+$part11 : #8a66c6;
+$part12 : #d9ce52;
+
+// $val_pro: #932ab6;
+// $val_income: #00a65a;
+// $val_input: #f56954;
+// $val_cont: #3c8dbc;
+// $val_fin: #39cccc;
+
+$commentBoxBg_pms : #f3f3f3;
+
+$lastY : #d2d6de;
+$thisY : #5067a4;
+
+
+.underBg{
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    &::after{
+        content:'';
+        width: 100%;
+        height: 12px;
+        background: $yellowLight;
+        opacity: 0.5;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    & + .inputList,
+    & + .commentBox,
+    & + .tableBox{
+        margin-top: rem(25);
+    }
+}
+
+
+.dot{
+    display: inline-block;
+    width: rem(10);
+    height: rem(10);
+    border-radius: 50%;
+    // vertical-align: middle;
+    margin-right: rem(12);
+}
+.underL{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+//상태별 색상
+.sClear{
+    color: $mainColor;
+    .dot{
+        background: $mainColor;
+    }
+}
+.sOrder{
+    color: $highlight;
+}
+.sCancel{
+    color: $cancel;
+    .dot{
+        background: $cancel;
+    }
+}
+.sReject{
+    color: $delay; 
+}
+.sDanger{
+    color: $black; 
+    .dot{
+        background: $delay;
+    }
+}
+.sSafe{
+    color: $black;
+    .dot{
+        background: $safe;
+    }
+}
+.sChecking{
+    color: $checking;
+}
+
+.dot{
+    vertical-align: middle;
+    &.sDanger{
+        background: $delay;
+    }
+    &.sSafe{
+        background: $safe;
+    }
+}
+
+
+
+//평가별 색상
+.eHigh{
+    color: $highlight;
+}
+.eLow{
+    color: $delay;
+}
+
+//요일별 색상
+.sat{
+    color: $highlight;
+}
+.sun{
+    color: $error;
+}
+
+//기한별 색상
+.dNear{
+    color: $delay !important;
+}
+.dOngoing{
+    color: $highlight !important;
+}
+.dNone{
+    color: $highlight !important;
+}
+.onGoing{
+    color:$onGoing;
+};
+
+//총매입매출
+.tBuy{
+    color: $error;
+}
+.tSales{
+    color: $subBlue;
+}
+
+
+.mainC{
+    color: $mainColor;
+}
+.subInfo{
+    color: $subInfo;
+}
+.subGray{
+    color: $subGray2;
+}
+.extra,
+.marked,
+.important{
+    color: $error;
+}
+.emp{
+    color: $mainColor;
+}
+.dark{
+    color: $black;
+}
+
+//마이프로젝트-직무추천-설정팝업
+.addSet{
+    color: $highlight;
+    font-size: rem(14);
+    position: absolute;
+    left: 50%;
+    transform: translateX(160%);
+}
+
+//에러텍스트
+.error{
+    display: none;
+    color: $error;
+    font-size: rem(14);
+    // text-indent: rem(16);
+    margin-top: rem(6);
+    &.is-active{
+        display: block;
+    }
+    + input[type=password]{
+        margin-top: rem(10);
+    }
+}
+
+
+
+//감추기
+// .blind {
+//     position: absolute;
+//     overflow: hidden;
+//     margin: -1px;
+//     padding: 0;
+//     width: 1px;
+//     height: 1px;
+//     border: none;
+//     clip: rect(0, 0, 0, 0);
+// }
+
+
+.relative{
+    position: relative;
+}
+
+//정렬
+.flex{
+    display: flex;
+}
+.flexCenter{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.flexStr{
+    display: flex;
+    align-items: start;
+}
+.flexEnd{
+    display: flex;
+    align-items: end;
+}
+.flexBw{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    //align-items: center; //0530 J추가
+}
+
+.flex_1_1{
+    display: flex;
+    // >.prefix{flex: 1 1 51%;} // 11.01 50 -> 51수정
+                                //공통으로 쓰는 부분인데 1:1 의 목적에 맞아야해요..
+    >.prefix{flex: 1 1 50%;}
+    >.suffix{flex: 2 1 50%;}
+}
+.flex_2_1{
+    display: flex;
+    >.prefix{flex: 1 1 65%;}
+    >.suffix{flex: 2 1 35%;}
+}
+.flex_1_2{
+    display: flex;
+    >.prefix{flex: 1 1 35%;}
+    >.suffix{flex: 2 1 65%;}    
+}
+.flex_2_3{
+    display: flex;
+    >.prefix{flex: 1 1 40%;}
+    >.suffix{flex: 2 1 60%;}    
+}
+.flex_3_2{
+    display: flex;
+    >.prefix{flex: 3 1 0;}
+    >.suffix{flex: 2 1 0;}    
+}
+.flex_4_3{
+    display: flex;
+    >.prefix{flex: 4 1 0;}
+    >.suffix{flex: 3 1 0;}    
+}
+.flex_4_5{
+    display: flex;
+    >.prefix{flex: 4 1 0;}
+    >.suffix{flex: 5 1 0;}    
+}
+
+.block{
+    display: block !important;
+}
+.none{
+    display: none;
+}
+.is-hidden{
+    visibility: hidden;
+}
+.disabled{
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.txtLeft{
+    text-align: left;
+}
+.txtCenter{
+    text-align: center;
+    .onlyIco{
+        display: initial;
+    }
+}
+.txtRight{
+    text-align: right;
+}
+.float_l{
+    float: left;
+}
+.float_r{
+    float: right;
+}
+
+.ellipsis{
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space:nowrap;
+    text-align: left;
+    // cursor:pointer;
+    &.center{
+        text-align: center;
+    }
+}
+.ellipsis-5 {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: inherit;
+    word-wrap:break-word;
+    -webkit-line-clamp: 5;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    cursor: initial;
+}
+.dragTr{
+    cursor: move;
+}
+
+.over_h{
+    overflow: hidden;
+}
+
+.xScroll{
+    overflow-x: auto;
+}
+
+
+
+//스크롤 커스텀
+.yScroll{
+    overflow-y: auto;
+}
+::-webkit-scrollbar {
+    width: 8px;  // 10px -> 8px
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: $scrollTrack; //#f2f2f7
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: $scrollThumb; //#58585e
+    //트랙사이 간격
+    //background-clip: padding-box;
+    //border: 2px solid transparent;
+}
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+}
+
+.mr0{margin-right: 0 !important;}
+.mr5{margin-right: rem(5) !important;}
+.mr10{margin-right: rem(10) !important;}
+
+.ml5{margin-left: rem(5) !important;}
+.ml10{margin-left: rem(10) !important;}
+.ml15{margin-left: rem(15) !important;}
+.ml20{margin-left: rem(20) !important;}
+.ml40{margin-left: rem(40) !important;}
+
+.mt0{margin-top: 0 !important;}
+.mt5{margin-top: rem(5) !important;}
+.mt6{margin-top: rem(6) !important;}
+.mt10{margin-top: rem(10) !important;}
+.mt15{margin-top: rem(15) !important;}
+.mt20{margin-top: rem(20) !important;}
+.mt30{margin-top: rem(30) !important;}
+.mt50{margin-top: rem(50) !important;}
+
+.mb0{margin-bottom: 0 !important;}
+.mb5{margin-bottom: rem(5) !important;}
+.mb10{margin-bottom: rem(10) !important;}
+.mb20{margin-bottom: rem(20) !important;}
+
+.mt-10{margin-top: -10px !important;}
+.mt-20{margin-top: -20px !important;}
+
+.w65{width: rem(65);}
+.w100{width: rem(100);}
+.w110{width: rem(110);}
+.w90p{width: 90%;}
+.h100{height: 100%;}
+.lh50{line-height: rem(50);}
+
+.fz0{font-size: 0;}
+.f14{font-size: 14px !important;} //0913 J 추가
+.f13{font-size: 13px !important;} //1102 J 추가
+
+.p0{padding: 0 !important;}
+.p0-10{padding: 0 rem(10) !important;}
+.p0-30{padding: 0 rem(30);}
+.pl10 {padding-left: rem(10)!important;} // J 추가
+
+
+//문자/메일 보내기 팝업창 에디터 리더(?) 요소 높이값
+.cke_screen_reader_only{
+    height: 0 !important;
+}
+
+
+.mobile{display: none;}
+.pc{display: inline-block;}
+@media (max-width: 960px){
+    .mobile{display: inline-block;}
+    .pc{display: none;}
+}

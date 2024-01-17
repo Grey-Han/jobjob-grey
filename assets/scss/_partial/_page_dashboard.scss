@@ -1,0 +1,318 @@
+.dashboard{
+    overflow: hidden;
+    //height: 100%;
+    // padding: 1.875rem 3.875rem 0 3.875rem  !important;
+    // width: 1250px;
+    table{
+        //tfoot없음
+        // tfoot{
+        //     td{
+        //         background: #e2e2e2;
+        //         padding: 0 rem(10);
+        //     }
+        // }
+        // &.chkType{
+        thead{
+            height: rem(38);
+            margin-top: 10px;
+        }
+        tr{                
+            td{
+                height: rem(38);
+                &.left{
+                    // padding-left: rem(40);                            
+                    padding-left: rem(20);                            
+                }
+                &.right{
+                    // padding-right: rem(40);         
+                    padding-right: rem(20);         
+                }
+            }
+        }
+        // }   
+        .dot{
+            // margin-right: 4px;
+            vertical-align: baseline;
+            margin: 0 rem(8);
+        }         
+    }
+    .accBox{
+        .prefix{
+            width: 20%;
+        }
+    }
+}
+
+
+.dashboard{
+    .condition{
+        margin-top: -30px;
+        .condiTit{
+            margin-left: rem(20);
+            margin-right: rem(5);
+        }
+        .hasBtn{
+            align-items: baseline;
+        }
+    }
+    .contentFlex{
+        margin-top: rem(10);
+        display: flex;
+        gap: 20px;
+        .boxWrap{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: rem(30) rem(20);
+            height: calc(100vh - 175px);
+            overflow: hidden;
+            &.prefix{
+                padding: rem(30) rem(20);
+                flex: 8 1 0;
+            }
+            &.suffix{
+                padding: rem(30);
+                flex: 9 1 0;
+            }
+            h4{
+                color: $dashboardTit_pms;
+            }
+            .h4_sub{
+                margin-left: rem(13);
+                color: $dashboardSub_pms;
+                font-weight: normal;
+            }
+            .mid,
+            .bottom{
+                margin-top: rem(30);
+                margin-right: rem(40);
+                display: flex;
+                align-items: flex-start;   
+                justify-content: space-between;
+                // gap: 40px; 
+                .dashTit{
+                    width: rem(100);
+                }
+            }
+            // .mid{
+            //     margin-right: rem(28);
+            // }
+            .bottom{
+                margin-top: rem(40);
+                margin-right: rem(60);
+                .labels{      
+                    ul{
+                        gap: 20px;
+                    }
+                }
+            }
+            .labels{      
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 25vh;
+                }
+                li{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    span{
+                        display: inline-block;
+                        width: rem(20);
+                        height: rem(14);
+                        text-indent: -99999px;
+                        background: $lastY;
+                    }
+                    &.thisY{
+                        span{background: $thisY;}
+                    }
+
+                    &.part01{
+                        span{background: $part01;}
+                    }
+                    &.part02{
+                        span{background: $part02;}
+                    }
+                    &.part03{
+                        span{background: $part03;}
+                    }
+                    &.part04{
+                        span{background: $part04;}
+                    }
+                    &.part05{
+                        span{background: $part05;}
+                    }
+                    &.part06{
+                        span{background: $part06;}
+                    }
+                    &.part07{
+                        span{background: $part07;}
+                    }
+                    &.part08{
+                        span{background: $part08;}
+                    }
+                    &.part09{
+                        span{background: $part09;}
+                    }
+                    &.part10{
+                        span{background: $part10;}
+                    }
+                    &.part11{
+                        span{background: $part11;}
+                    }
+                    &.part12{
+                        span{background: $part12;}
+                    }
+                }
+            }
+        }
+        .dashTit{
+            @include sideArray;
+            .unit{
+                font-size: rem(13);
+                font-weight: 600;
+            }
+        }
+        .noticeBoard{
+            margin-top: rem(15);
+            padding: rem(25) rem(36);
+            @include sideArray;
+            border-radius: 10px;
+            background: $notiBoardBg_pms;
+            border: 1px solid $notiBoardBd_pms;
+            .prefix,
+            .center,
+            .suffix{
+                @include heightArray;
+            }
+            h1{
+                margin-left: rem(15);
+                font-size: rem(32);
+                font-weight: 700;
+                span{
+                    margin-left: 5px;
+                    font-size: rem(22);
+                    &.unit{
+                        margin-left: 0;
+                        font-size: rem(18);
+                    }
+                }
+            }
+            .suffix{
+                h1{
+                    color: $notiTit_pms;
+                }
+            }
+        }
+    }
+    .accWrap{
+        margin-top: rem(30);
+        padding-bottom: 1px;
+        // height: rem(328);
+        height: calc(100vh - 570px);
+        @include scroll_0;
+    }
+    .accBox{
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    .accHead{
+        .projTit{
+            padding-left: rem(20);
+            position: relative;
+            &::before{
+                content:'';
+                width: rem(11);
+                height: rem(11);
+                background: $part01;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+            &.part02{
+                &::before{background: $part02;}
+            }
+            &.part03{
+                &::before{background: $part03;}
+            }
+            &.part04{
+                &::before{background: $part04;}
+            }
+            &.part05{
+                &::before{background: $part05;}
+            }
+            &.part06{
+                &::before{background: $part06;}
+            }
+            &.part07{
+                &::before{background: $part07;}
+            }
+            &.part08{
+                &::before{background: $part08;}
+            }
+            &.part09{
+                &::before{background: $part09;}
+            }
+            &.part10{
+                &::before{background: $part10;}
+            }
+            &.part11{
+                &::before{background: $part11;}
+            }
+            &.part12{
+                &::before{background: $part12;}
+            }
+        }
+        .suffix{
+            ul{
+                display: flex;
+                gap: rem(30);
+                color: $black;
+            }
+            .label{
+                margin-right: rem(10);
+                vertical-align: text-top;
+            }
+        }
+    }
+    .accInner{
+        padding: 0 rem(30);
+        padding-bottom: rem(20);
+    }
+}
+
+//반원그래프
+.halfGraph{
+}
+//원그래프
+// .circleGraph{
+//     ul{
+//         display: flex;
+//         max-width: 40vw;
+//         li{
+//             width: 20%;
+//             position: relative;
+//             .numVal{
+//                 font-size: rem(16);
+//                 font-weight: 500;
+//                 position: absolute;
+//                 left: 50%;
+//                 top: 58%;
+//                 transform: translateX(-50%);
+//                 &.pro{color: $val_pro;}
+//                 &.income{color: $val_income;}
+//                 &.input{color: $val_input;}
+//                 &.cont{color: $val_cont;}
+//                 &.fin{color: $val_fin;}
+//             }
+//         }
+//     }
+// }
+//막대그래프
+// .barGraph{
+//     margin-top: rem(10);
+//     height: rem(280);
+// }

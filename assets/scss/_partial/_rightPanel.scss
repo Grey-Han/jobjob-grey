@@ -1,0 +1,121 @@
+/* GNB 아이콘 */
+.rPanel{
+    z-index: 20;
+    i{        
+        width: rem(30);
+        height: rem(30);
+        width: rem(24);
+        height: rem(24);
+        background-image: url(../img/icoGnb.png);
+        &.searchMem{
+            background-position: -120px 0px;
+        }
+        &.schedule{
+            background-position: -120px 0px;
+        }
+        &.mail{
+            background-position: -120px -30px;
+        }
+    }
+}
+
+.rPanelLayer{
+    font-size: rem(14);
+    z-index: 20;
+    .rPanelBox{
+        padding: rem(20);
+        height: calc(100vh - 60px);
+        border: 1px solid $layoutColor;
+        border-top:0;
+        box-shadow: -8px 8px 10px 0 rgba(0, 0, 0, 0.2);
+    }   
+    .rPanelCont{  
+        .yScroll{
+            //height: calc(100vh - 317px);
+            //height: calc(100vh - 272px);
+            height: calc(100vh - 300px);
+            @include scroll_0;
+            .nodata{
+                height: calc(100% - 20px);
+            }
+        }
+        .boxList{
+            button{
+                width: rem(80);
+            }
+            //필요한가?
+            .white{
+                height: rem(60);
+                line-height: initial;
+                span{
+                    display: block;
+                    font-size: 13px;
+                    font-weight: 300;
+                    color: $accDate;
+                }
+            }
+        }
+        .hasBtn{            
+            margin-bottom: rem(20);
+            .onlyIco{
+                width: rem(32);
+                height: rem(32);
+            }
+        }
+        .inputIco{
+            width: 100%;
+            input[type=text]{
+                height: rem(32);
+            }
+        }
+        .memSkill{
+            width: rem(160) !important;
+        }
+    }
+    h2{
+        text-align: center;
+        margin-bottom: rem(26);
+    }
+    // .listTop{
+    //     label{
+    //         margin-right: 0;
+    //     }
+    // }
+    .filterWrapper{
+        left: -199px;
+        top: -1px;
+    } 
+    // .boxList{
+    //     &.headType{
+    //         .cont{
+    //             .prefix{
+    //                 width: 75%;
+    //                 position: relative;
+    //                 &::before{
+    //                     content:'';
+    //                     width: 1px;
+    //                     height: rem(80);
+    //                     background: $layoutColor;
+    //                     position: absolute;
+    //                     right: -10px;
+    //                     top: 50%;
+    //                     transform: translateY(-50%);
+    //                 }
+    //             }
+    //             .suffix{
+    //                 button{
+    //                     width: auto;
+    //                     padding: 0 rem(6);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+.rPanelHeader{
+    @include clear_float;
+    .layerClose{
+        float: right;
+    }
+}

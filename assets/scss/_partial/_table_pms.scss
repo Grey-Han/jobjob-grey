@@ -1,0 +1,55 @@
+table{
+    tbody{ 
+        tr{
+            &:hover{
+                background: $tableHover;
+            }   
+            th{
+                background: $bodyTh_pms;
+                
+            }
+        }
+    }
+    tr{
+        th{
+            background: $gnbGray;   
+            font-size: rem(13); 
+            font-weight: 400;   //11.01 추가     
+            &.fold{
+                height: auto;
+            }            
+        }   
+        td{
+            height: rem(41);
+            font-size: rem(13); 
+        }
+        &.is-active{
+            background: $trClk_pms;
+            &:hover{
+                background: $trClk_pms;
+            } 
+        }
+        &.is-filter{
+            background: $trFilter_pms;
+            &:hover{
+                background: $trFilter_pms;
+            } 
+        }
+    }
+    tfoot{
+        td{
+            padding: 0 6px;
+            // background: $tfoot_pms;
+            background: $tfootGray; //J
+        }
+    }       
+    input, textarea, select, button{            
+        font-size: rem(13); 
+        &::placeholder{
+            font-size: rem(13); 
+        }
+    }
+    a{
+        color: $a_pms;
+    }
+}

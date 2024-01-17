@@ -1,0 +1,37 @@
+.inputBox{
+    padding: rem(20);
+    border-radius: 6px;
+    border: 1px solid $layoutColor;
+    li{
+        & + li{
+            margin-top: rem(16);
+        }
+        ul{
+            margin-left: rem(26);
+            margin-top: rem(16);
+            &.flex{
+                li{
+                    margin-top: 0;
+                    margin-right: rem(10);
+                }
+            }
+        }
+        button{
+            float: right;
+        }
+        .subInfo{
+            font-size: rem(14);
+            color: $selGray;
+            float: right;
+        }
+    }
+    label{
+        font-weight: 400;
+    }
+}
+
+h5{
+    & + .inputBox{
+        margin-top: rem(16);
+    }
+}

@@ -1,0 +1,32 @@
+.sendedOfferDetail{
+    width: 100%;
+}
+
+.sendedOfferDetail{
+    .tabCont{
+        margin-top: -2px;
+        // padding: rem(5) rem(25) rem(50);
+        padding: rem(10) rem(25) rem(22) rem(25); //0913 J 수정
+        background: $white;
+        border: 1px solid $inputGray;
+    }
+    .tabBtnWrap{
+        position: relative;
+        select{
+            height: rem(32);
+            position: absolute;
+            right: 0;
+        }
+    }
+    .innerList{
+        padding: rem(20) rem(25);
+        cursor:initial;
+        ul{
+            flex-wrap: wrap;
+            flex-grow: 1;
+        }
+        li{
+            line-height: rem(34);
+        }
+    }
+}

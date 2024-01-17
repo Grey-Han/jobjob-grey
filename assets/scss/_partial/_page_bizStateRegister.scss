@@ -1,0 +1,465 @@
+.bizStateRegister{
+    width: 100%;
+    input{
+        &.editType{
+        width: 40px !important ;
+        height: rem(28) !important ;
+        background: transparent !important ;
+        padding: 0;
+        margin-right:10px;
+        text-align: center;
+        font-size: 12px;
+        padding-left: rem(4);
+        border: 0;
+
+            &:focus{      
+            border: 01px solid #ddd;      
+            outline: 1px solid #eee;
+            }
+        }
+    }
+    .regiPartWrapper{        
+        padding-left: rem(50);
+        padding-right: rem(126);
+        .regiPart {
+            .boxWrap{
+                margin-top: rem(10);
+                padding: rem(30) rem(50);
+            }
+        }
+    }
+    .col6{
+        // margin-top: rem(20);
+        width: rem(1300);
+        column-gap: rem(60);
+        grid-template-columns: 1fr 50px 1.8fr 1fr 1fr 130px;
+        grid-template-columns: 1fr 50px 1.6fr 1fr 1fr 140px;  //1fr 50px 1.8fr 1fr 1fr 130px -> 수정
+    }
+    .hasBtn{
+        input{
+            flex-grow: 1;
+        }
+        .button,
+        button{
+            width: rem(60);
+        }
+    }
+    // .range{
+    //     margin: 0 23px;
+    // }
+    .clientComp{
+        grid-column: 1/3;
+    }
+    .bizTerm{
+        grid-column: 4/6;
+        .flex{
+            align-items: center;
+            justify-content: space-between;
+        }
+        // input[type=text]{
+        //     &.dateType{
+        //         width: rem(176) !important;
+        //     }
+        // }
+        .datepicker{
+            width: rem(176);
+        }
+    }
+    .bizProjNm,
+    .bizFile{
+        grid-column: 1/4;
+        .flex{
+            @include sideArray;
+        }
+        i{
+            margin-left: 5px;
+        }
+    }
+    .bizInsurance{
+        grid-column: 5/7;
+        label{
+            margin-right: rem(20);
+            line-height: 44px;
+        }
+    }
+    // li{        
+    //     i{
+    //         margin-left: 5px;
+    //     }
+    // }
+    select{
+        &.others{
+            color: $error;
+        }
+    }
+    h4{
+        color: $btnBd_pms;
+        font-weight: 500;
+        & + .tableTop{
+            margin-top: rem(30);
+            margin-bottom: rem(3);
+        }
+    }    
+}
+
+
+.bizStateRegister{
+    .boxWrap{
+        >.prefix,
+        >.suffix{
+            width: rem(775);
+            // .tabBtn{
+            //     a{
+            //         border-radius: 4px 4px 0 0;
+            //     }
+            // }
+        }
+        &.flex{
+            gap: 40px;
+        }
+    }
+    .tabWrapper{
+        position: relative;
+        &.mt20{
+            .tabBtn{
+                button{
+                    margin-left: rem(645);
+                }
+            }
+        }
+        .flex{
+            justify-content: space-between;
+            align-items: center;
+        }
+        .suffix{
+            display: flex;
+            gap: rem(5);
+            &.absol{
+                position: absolute;
+                top: 3px;
+                left: 637px;  // 630 -> 637
+            }
+        }
+    }
+    .tabBtnWrap{
+        .tabBtn{
+            line-height: rem(34);   
+            a{
+                width:rem(84);
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }         
+            &:first-child{
+                a{
+                    border-top-left-radius: rem(4);
+                }                
+            }
+        }
+    }
+    .moveBtn{
+        button{
+            &:disabled{                    
+                .goLt{
+                    background-position: -40px -180px;
+                }
+                .goRgt{
+                    background-position: -60px -180px;
+                }
+            }
+        }
+    }
+    .tableTop{
+        .hasTooltip{
+            & + .hasTooltip{
+                margin-left: rem(10);
+            }
+            .tooltip{
+                top: 150%;
+            }
+        }
+        .suffix{
+            gap:2px;
+        }
+    }
+
+    table{
+        //pms
+        input[type=text],
+        input[type=number]{
+            padding: rem(4) rem(4);
+            background: $white; //11.01추가
+            // text-align : right; //11.01추가
+            &.dateType{  
+                width: 100%;
+                padding: rem(2);
+                text-align: center;
+                background: $white;
+                // &.noBg{
+                //     padding: rem(2);
+                //     text-align: center;
+                //     background: white;
+                // }
+            }            
+        }
+        tfoot{
+            td{
+                height: rem(58);
+                &:last-child{
+                    padding-right: 20px;
+                }
+            }
+        }
+        td{
+            height: rem(44); // 11.23추가
+            font-size: 13px;  // 11.23추가
+            &.wide{
+                width: 150px !important;
+            }
+            button{ 
+                // &.bdType{
+                    font-size: 13px; // 11.23추가
+                //  }
+            }
+            b{
+                display: inline-block;
+                min-width: rem(25);
+            }
+            .txtType{
+                padding: 0 rem(8);
+            }
+        } 
+    }
+    
+
+    //231201
+    // button{
+    //     &.smSize,
+    //     &.midSize,
+    //     &.save{
+    //         background: $mainColor_pms;
+    //         border: 1px solid $mainColor_pms;
+    //     }
+    //     &.white{
+    //         background: $white;
+    //         border: 1px solid $inputGray;
+    //     }
+    // }
+    .tabBtnWrap{
+        .tabBtn{
+            a{
+                &.is-active{
+                    background-color: $tab_pms;
+                    border: 1px solid $tab_pms;                    
+                }            
+            }
+        }
+    }
+    table{
+        tr{
+            th{
+                //height: rem(26); 11.01삭제
+                // &.sales{background: $thSales_pms; border: 0 !important;} //11.1 border: 0추가
+                // &.buy{background: $thBuy_pms; border: 0 !important;}
+                // &.inner{background: $thInner_pms; border: 0 !important;}
+                &.sales{background: $thSales_pms;}
+                &.buy{background: $thBuy_pms;}
+                &.inner{background: $thInner_pms;}
+                .ico{
+                    margin-left: 3px;
+                }
+            }
+            &:nth-child(2){
+                th{
+                    height: rem(20);
+                    &.sales{background: $thSales2_pms;}
+                    &.buy{background: $thBuy2_pms;}
+                    &.inner{background: $thInner2_pms;}
+                }                
+            }
+        }
+    }
+    // .commentBox{
+    //     width: 90%;
+    // }
+}
+
+//2.계약현황 요청 css
+#bsDetail1{
+    tbody,
+    tfoot{
+        //font-size: rem(13);
+        // br{
+        //     & + b{
+        //         font-size: rem(12);
+        //     }
+        // }
+        input,
+        textarea,
+        select{
+            font-size: rem(13);
+            &.txtRight{
+                font-size: rem(12);
+            }
+            &::placeholder{
+                font-size: rem(12); //13->12로 변경
+            }
+        }
+        .ellipsis{
+            font-size: rem(12);
+        }
+    }    
+    .prefix{
+        .tabBtn{
+            // line-height: rem(34);
+            a{
+                width:rem(62);
+                padding: 0 3px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            // &:first-child{
+            //     a{
+            //         width:rem(60);
+            //     }                
+            // }
+            &:last-child{
+                a{
+                    width: auto;
+                    padding: 0 rem(6);
+                }                
+            }
+            input{
+                width: rem(40);
+                height: rem(26);
+                padding: 0 2px;
+                // background: transparent;
+            }
+            .editInput{
+                width:rem(64);
+                padding: 0 3px;
+                background-color: $tab_pms;
+                border: 1px solid $tab_pms;                  
+            }
+        }
+    }
+    
+    .modalLayer{
+        top: 90%;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        .layerBox{
+            padding: rem(15) rem(20);
+            min-width: rem(205);
+            white-space: nowrap;
+            input[type=checkbox]{
+                & + label{
+                    margin-bottom: 0;
+                }
+            }
+            .flex{
+                gap: 10px;
+            }
+        }
+    }
+}
+
+
+.flexLeft{
+    padding-bottom: rem(10);
+    display: flex;
+    gap: 40px;  // 20 -> 40
+    // flex-wrap: nowrap;
+    overflow-x: auto;
+    // &::-webkit-scrollbar-track {
+    //     background-color: transparent;
+    // }
+    >.prefix{
+        flex-shrink: 0;
+        // width: 783px; //820 -> 783
+        // width: 775px; //820 -> 783
+        width: 810px; //820 -> 783
+        th{
+            height: rem(51);
+        }
+        .tableBox{
+            overflow-y: initial;
+        }
+    }
+    >.suffix{
+        flex: 2 1 50%;
+        // width: 770px;
+
+        // width: 1200px;  // 900 -> 1200 origin/jina
+        // width: 775px;
+        width: 740px;
+        flex: 0 0 auto;
+        // flex-grow: 1;
+        // overflow-x: hidden;
+        .tabCont{
+            &:first-child{
+                th{
+                    height: rem(51);
+                }
+            }
+        }
+        // table{
+        //     tr{
+        //         &.is-active {
+        //             background: #f8f2f2;  //#eaf6f9
+        //         }
+        //     }
+        // }        
+        tfoot{
+            td{
+                text-align: right;
+                padding-right: 10px;
+                &.sortL{
+                    padding-right: 20px;
+                    &::before{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }   
+     
+    .tableBox{
+        // width: 1100px;
+        // th,
+        td{
+            &.fold{
+                height: rem(26); //추가
+                border-left: 1px solid $tableBorder; //b2b4b7 -> ddd
+                &.is-active{
+                    border-left: 0;
+                }
+            }
+        }
+        // tfoot{
+        //     td{
+        //         padding: 0;
+        //     }
+        // }
+    }
+}
+
+.flexTable{
+    width: 100%;
+    overflow-x: auto;
+    .flexLeft{
+        .suffix{
+            width: 1201px;   //상하정렬시 추가 10.31
+        }
+    }        
+}
+
+
+.hideS,
+.hideB,
+.hideI{
+    display: none;
+    &.on{
+        display: table-cell;
+    }
+}

@@ -1,0 +1,75 @@
+/* GNB 아이콘 */
+.gnb{
+    .ico{        
+        width: rem(23);
+        height: rem(22);
+        background-image: url(../img/pms/icoGnb.png);
+        &.home{
+            background-position: -60px 0;
+        }
+        &.member{
+            background-position: -60px -30px;
+        }
+        &.project{
+            background-position: -60px -60px;
+        }
+        &.bizstate{
+            background-position: -60px -150px;
+        }
+        &.tcount{
+            background-position: -60px -210px;
+        }
+        &.ledger{
+            background-position: -60px -120px;
+        }
+        &.calculation{
+            background-position: -60px -180px;
+        }
+        &.admin{
+            background-position: -60px -90px;
+        }
+    }
+}
+.ico{        
+    &.ctrlBtn{
+        width: rem(22);
+        height: rem(22);
+        background-image: url(../img/icoGnb.png);
+        background-position: 0px 0px;
+    }
+}
+
+//선택상태일때
+.navWrapper{
+    li{
+        &.is-active{
+            
+            .ico{
+                &.home{
+                    background-position: -90px 0;
+                }
+                &.member{
+                    background-position: -90px -30px;
+                }
+                &.project{
+                    background-position: -90px -60px;
+                }
+                &.bizstate{
+                    background-position: -90px -150px;
+                }
+                &.tcount{
+                    background-position: -90px -210px;
+                }
+                &.ledger{
+                    background-position: -90px -120px;
+                }
+                &.calculation{
+                    background-position: -90px -180px;
+                }
+                &.admin{
+                    background-position: -90px -90px;
+                }
+            }
+        }
+    }
+}

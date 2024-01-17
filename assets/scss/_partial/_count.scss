@@ -1,0 +1,18 @@
+.countBox{
+    display: flex;
+    button{
+        min-width: rem(32);
+        height: rem(32);
+        line-height: rem(30);
+    }
+    input[type=text]{
+        width: rem(50);
+        height: rem(32);
+        text-align: center;
+        background: $white;
+        margin: 0 rem(3);
+        &:focus{
+            outline: inherit;
+        }
+    }
+}

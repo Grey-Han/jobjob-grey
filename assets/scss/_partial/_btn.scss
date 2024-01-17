@@ -1,0 +1,372 @@
+button, 
+.button{
+    display: inline-block;  //다른태그에서 필요
+    width: 100%;
+    line-height: rem(42);
+    // height: rem(48);
+    color: $white;
+    font-weight: 500;
+    text-align: center;
+    font-size:rem(15);
+    border-radius: rem(6);
+    border:1px solid $mainColor;
+    background-color: $mainColor;
+    cursor: pointer;
+    //disable
+    &:disabled,
+    &.disabled{
+        cursor:not-allowed;
+        // color: $cancel;
+        // background-color: $white;
+        color: $inputGray;
+        background:$inputDisable;
+        border: 1px solid $inputGray;
+        i{
+            opacity: .3;
+        }
+        .attached{
+            display: block;
+            color: $cancel !important;
+            text-decoration: none;
+            cursor: not-allowed;
+        }
+    }
+    //버튼간격
+    & + button,
+    & + .button{
+        //margin-left: rem(6);
+        &.txtType{
+            margin-left: rem(15);
+        }
+    }
+    //231201
+    // &.auto{
+    //     width: auto;
+    // }
+    // &.lowSize{
+    //     line-height: rem(30);
+    // }
+    &.xsSize{
+        width: rem(45);
+        line-height: rem(30);
+    }
+    &.smSize{
+        min-width: rem(60);
+        width: auto;
+        line-height: rem(28);
+        padding: 0 rem(6);
+        font-weight: 400;
+        font-size: rem(14);
+    }
+    &.midSize{
+        min-width: rem(90);
+        width: auto;
+        padding: 0 rem(15);
+    }
+    &.laSize{
+        min-width: rem(120);
+        width: auto;
+        padding: 0 rem(20);
+        font-size: rem(16);
+    }
+    &.xlSize{
+        min-width: rem(160);
+        width: auto;
+        line-height: rem(52);
+        font-size: rem(18);
+    }
+    &.mid-lowSize{
+        min-width: rem(90);
+        width: auto;
+        line-height: rem(34);
+        padding: 0 rem(15);
+    }
+    //디자인
+    &.ico{
+        background-color: inherit;
+        border: 0;
+    }
+    &.bdType{
+        color: $mainColor;
+        background-color: $white;
+        border: 1px solid $mainColor;
+    }
+    &.rBdType{
+        color: $error;
+        background-color: $white;
+        border: 1px solid $error;
+        &:disabled,
+        &.disabled{
+            opacity: 0.5;
+        }
+    }
+    &.white{
+        color: $black;
+        background-color: $white;
+        border: 1px solid $inputGray;
+        &:disabled,
+        &.disabled{
+            color: $inputGray;
+            background:$inputDisable;
+            cursor:not-allowed;
+        }
+    }
+    &.black{
+        background: $black;
+        border:1px solid $black;
+    }
+    &.showMemo{
+        line-height: rem(24);
+        background: $bgColor;
+        border: 1px solid $bgColor;
+        &.is-active{
+            .expand{
+                transform: rotate(180deg);
+            }
+        }
+    }
+    &.warning{
+        width: auto;
+        background: $error;
+        border: 1px solid $error;
+    }
+    &.round{
+        min-width: rem(40); // 44 -> 40
+        width: auto;
+        padding: 0 rem(7);
+        height: rem(22); // 23 -> 22
+        line-height: rem(18); // 24 -> 18
+        color: $black;
+        font-size: rem(12);
+        margin-right: rem(2); //0913 J 추가
+        font-weight: 500;
+        word-break: keep-all;
+        vertical-align: text-bottom;  
+        background: $white;
+        border: 1px solid $btnGray;
+        border-radius: rem(20);      
+        &.disabled{
+            color: $inputGray;
+            background:$inputDisable;
+            border: 1px solid $layoutColor;
+        }
+    }
+    &.hasIco{
+        @include heightArray;
+    }
+    &.onlyIco{
+        width: rem(44);
+        height: rem(44);
+        background-color: $white;
+        border: 1px solid $inputGray;
+        @include heightArray;
+        &.xsSize{
+            width: rem(20);
+            min-width: auto;
+            line-height: rem(20);
+            height: rem(22);
+        }
+        &.smSize{
+            padding: 0;
+            min-width: auto;
+            // line-height: rem(24);
+            width: rem(26);
+            height: rem(26);
+        }
+        &.midSize{
+            padding: 0;
+            width: rem(36);
+            min-width: auto;
+            line-height: rem(36);
+            height: rem(36);
+        }
+        &.lowSize{
+            padding: 0;
+            width: rem(32);
+            min-width: auto;
+            line-height: rem(30);
+            height: rem(32);
+            display: inline-flex;
+        }
+        &.gray{
+            border: 1px solid $btnBdGray;
+            background: $btnBgGray;
+        }
+        &.round{
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
+        }
+        &:disabled{
+            background: $inputDisable;
+        }
+        &.is-active{
+            background-color: $selHover;
+            border: 1px solid $inputGray; //0913 J수정
+        }
+    }
+    &.txtType{
+        width: auto;
+        line-height: initial;
+        font-weight: 400;
+        font-size: rem(14); //0530 J추가
+        color: $cancel;  //0530 J수정 $subInfo -> $cancel
+        background: transparent;
+        border:0;
+        &.mainC{
+            color: $mainColor;
+        }
+        span{
+            color: $black;
+            font-weight: 500;
+            &.attached{
+                color: $mainColor;
+            }
+        }
+    }
+    
+    //상태
+    &.order{
+        color: $highlight;
+        border-color: $highlight;
+    }
+    &.cancel{
+        color: $cancel;
+        border-color: $cancel;
+    }
+    &.checking{
+        color: $checking;
+        border-color: $checking;
+    } 
+    &.improve{
+        color: $improve;
+        border-color: $improve;
+    }
+    &.short,
+    &.reject,
+    &.decide{
+        color: $delay;
+        border-color: $delay;
+    }
+    &.clear{
+        color: $disable;
+        background: $activeGray;
+        border:0;
+    }
+    &.need{
+        color: $error;
+        background: $white;
+        border-color: $error;
+    }
+
+    //bg상태버튼
+    &.save,
+    &.send{
+        color: $white;
+        background: $mainColor;
+        border:0;
+    }
+    &.off{
+        color: $gray;
+        background: $offGray;
+        border:0;
+    }
+
+    //색상별
+    &.main{
+        font-size: rem(15);
+        color: $subBlue;
+        border-color: $subBlue;
+    }
+    &.sub{
+        font-size: rem(15);
+        color: $subGray;
+        border-color: $subGray;
+    }
+}
+
+
+span{
+    &.button{
+        cursor:inherit;
+    }
+}
+
+
+//라벨
+.label{
+    margin-right: 2px;
+    display: inline-block;
+    min-width: rem(38);  // 44 -> 38
+    height: rem(20);   // 23 -> 20
+    line-height: rem(20); // 23 -> 20
+    text-align: center;
+    color: $disable;
+    font-size: rem(12);
+    font-weight: 400;
+    text-align: center;
+    padding: 0 rem(6);
+    background: $tableBorder;
+    border-radius: rem(20);
+    border: 0;    
+    &.scround{
+        padding: 0;
+        min-width: auto;
+        width: rem(23);
+        line-height: rem(17);
+        height: rem(17);
+        font-size: rem(10);
+        color: $white;
+        border-radius: rem(5); 
+        background: $mainColor;
+    }
+    &.updated{
+        color: $white;
+        background: $highlight;
+    }
+}
+.point{
+    display: inline-block;
+    min-width: rem(30);
+    line-height: rem(18);
+    font-size: rem(12);
+    color: $white;
+    text-align: center;
+    background: $delay;
+    border:0;
+    border-radius: rem(5);
+    cursor: inherit;
+    &.mainC{
+        background: $mainColor;
+    }
+    &.normal{
+        background: $subGray;
+    }
+}
+.count{
+    margin-left: rem(6);
+    display: inline-block;
+    padding: 0 rem(3) 0 rem(2);
+    min-width: rem(20);
+    line-height: rem(19);
+    color: $white;
+    font-size: rem(14);
+    font-weight: normal;
+    text-align: center;
+    border-radius: rem(30);
+    border: 1px solid $mainColor;
+    background: $mainColor;
+    &.temp{
+        color: $error;
+        border: 1px solid $error;
+        background: $white;
+    }
+    &.offer{
+        min-width: rem(16);
+        width: auto;
+        line-height: rem(15);
+        font-size: rem(12);
+        color: $cancel;
+        border: 1px solid $cancel;
+        background: transparent;
+    }
+}

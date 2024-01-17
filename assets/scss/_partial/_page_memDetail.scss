@@ -1,0 +1,336 @@
+.memList{
+    width: rem(280);
+    //border-right: 1px solid $layoutColor;
+    .listTop{
+        padding: rem(10) 0 rem(5) 0;
+        text-align: right;
+        label{
+            margin-right: 0;
+            font-size: rem(14);
+        }
+    }
+    .boxListWrap{    
+        // height: calc(100vh - 124px);
+        height: calc(100vh - 156px);
+    }
+    .boxList{
+        height: rem(110);
+        .head{
+            font-weight: 700;
+        }
+    }
+}
+
+.memDetail{
+    width: calc(100% - 280px);
+    // padding: rem(30);
+    padding:  rem(40) rem(30);
+
+    // height: calc(100vh - 90px);
+    // overflow-y: auto;
+    .tableBox{
+        height: calc(100vh - 210px);
+        margin-top: rem(30);
+    }
+    .boxListWrap{    
+        height: calc(100vh - 240px);
+        margin-top: rem(10);
+    }
+    >.tabWrapper{
+        >.tabContWrap{
+            margin-top: rem(30);
+        }
+    }
+    .tabCont{
+        // @include scroll_0;
+        .resumeWrapper, .tableBox, .boxTop, .boxListWrap{
+            // padding: 0 rem(30);
+            padding-right: rem(10);
+            background: transparent;
+        }
+        td{
+            &.ellipsis{
+                cursor: inherit;
+            }
+        }
+    }
+    .chipBox{
+        margin-top: 10px;
+    }
+}
+
+
+#memDetail-1,
+#memDetail-3,
+#memDetail-4{
+    width: rem(1080);
+}
+#memDetail-2{
+    // #proj-sap{
+    //     width: rem(1080);
+    // }
+    .tableBox{
+        margin-top: rem(10);
+        max-height: calc(100vh - 240px);
+    }
+}
+
+.resumeWrapper{
+    font-size: rem(14);
+    // height: calc(100vh - 180px);
+    // overflow-y: auto;
+    .resuTop{
+        @include sideArray;
+        margin-bottom: rem(10);
+        button{            
+            min-width: rem(90);
+            width: auto;
+            line-height: rem(34);
+            padding: 0 rem(15);
+        }
+        .absol{
+            top: 45px;
+            left: 245px;
+            right: auto;
+            .layerBox{
+                padding: rem(18) rem(13);
+            }
+            input{
+                height: 36px;
+            }
+        }
+    }
+    .resuBox{    
+        height: calc(100vh - 250px);
+        overflow-y: auto;
+    }
+}
+.resume{
+    display: flex;
+    //margin-top: rem(8);
+    //height: rem(756);
+    ul{
+        li{
+            margin: 6px 0;
+            b{
+                margin-right: rem(6);
+            }
+        }
+    }
+    .signalBox{
+        margin: 20px -10px;
+        padding: rem(15);
+        font-size: 13px;
+        background: rgba(255,255,255,0.6);
+        border-radius: 6px;
+        border-top:1px solid $signalBox;
+        border: 1px solid $signalBox;
+        position: relative;
+        &::before{
+            content:'';
+            // margin-left: -6px;
+            // border: solid transparent;
+            // border-color: transparent;
+            // border-bottom-color: $white;
+            // border-width: 10px;
+            // pointer-events: none;
+
+            width: 20px;
+            height: 10px;
+            background-image: url(../img/signalBox_top.png);
+
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .reason{
+            color: $error;
+        }
+        .record{
+            margin-top: 20px;
+            text-align: right;
+        }
+    }
+    >.prefix{
+        width: rem(330);
+        padding: rem(40) rem(50);
+        background: $memBg;
+        // height: calc(100vh - 250px);
+        // @include scroll_0;
+        .top{
+            text-align: center;
+            .signal_la{
+                margin-right: rem(5);
+                &.none{
+                    display: none;
+                }
+            }
+            h3{
+                display: inline-block;
+                font-size: rem(26);
+                & + span{
+                    margin-left: rem(6);
+                    font-size: rem(16);
+                    letter-spacing: -0.71px;
+                    color: $subGray;
+                }
+            }
+            & + .mid{                
+                margin-top: rem(30);
+                padding-top: rem(30);
+                border-top:1px solid $titleGray;
+            }
+        }
+        .signalBox{
+            &.none{
+                & + .mid{
+                    margin-top: rem(30);
+                    padding-top: rem(30);
+                    border-top:1px solid $titleGray;
+                }
+            }
+        }
+        .mid{
+            li{
+                position: relative;
+                margin: 10px 0;
+                min-height: rem(20);
+                &.birth,
+                &.pNum,
+                &.mail,
+                &.address{
+                    margin-left: rem(24);
+                    &::before{      
+                        content:'';
+                        width: rem(16);
+                        height: rem(16);
+                        background-image: url(../img/icoGroup.png);
+                        background-position: -40px -184px;
+                        position: absolute;
+                        top: 2px;
+                        left: -20px;                  
+                        background-position: -320px -400px;
+                    }
+                }
+                &.pNum{
+                    &::before{
+                        background-position: -340px -400px;
+                        left: -18px;
+                    }
+                }
+                &.mail{
+                    &::before{
+                        background-position: -360px -400px;
+                        top: 6px;
+                    }
+                }
+                &.address{
+                    &::before{
+                        background-position: -380px -400px;
+                        left: -19px;
+                    }   
+                }
+
+                // &:nth-last-child(1),
+                // &:nth-last-child(2){
+                //     margin-left: 0;
+                //     &::before{
+                //         display: none;
+                //     }
+                // }
+            }
+        }
+        .bottom{
+            margin-top: rem(30);
+            padding-top: rem(30);
+            border-top:1px solid $titleGray;
+            b{
+                display: block;
+                // margin-top: rem(24);
+                margin-top: rem(48);
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+            a{
+                text-decoration: underline;
+                word-break: break-all;
+                &.download{
+                    text-decoration: none;
+                }
+            }
+            .portfolio{
+                margin-top: rem(10);
+            }
+        }
+    }
+    >.suffix{
+        padding: rem(40) rem(50);
+        width: calc(100% - 330px);
+        background: $white;
+        // height: calc(100vh - 250px);
+        // @include scroll_0;
+        .resuInfo{
+            + .resuInfo{
+                margin-top: rem(40);
+            }
+            h3{
+                padding-bottom: rem(6);
+                color: $beigeTit;
+                font-size: rem(20);
+                border-bottom: 1px solid $titleGray;
+            }
+            .tabCont{
+                padding: 6px 0;
+                .yScroll{
+                    width: 100%;
+                    height: rem(160);
+                    word-break: break-word;
+                }
+            }
+            .cont{
+                margin-top: rem(15);
+                line-height: 1.8;
+                b{
+                    margin-right: rem(20);
+                }
+                table{
+                    td{
+                        &:nth-child(2){
+                            @include ellipsis;
+                            display: block;
+                            cursor: initial;
+                        }
+                    }
+                }
+            }
+            &.flexBw{
+                .prefix{
+                    flex: 2 1 0;
+                    // 이력서 선호조건 보일때 추가하기
+                    margin-right: rem(20);
+                }
+                .suffix{
+                    flex: 1 1 0;
+                }
+                .tabBtnWrap{
+                    float: right;
+                }
+            }
+        }
+        table{
+            margin-top: rem(10);
+            th{
+                padding-top: 0;
+            }
+        }
+    }
+    table{
+        tr{
+            &:hover{
+                background: transparent ; 
+            }
+        }
+    }
+}

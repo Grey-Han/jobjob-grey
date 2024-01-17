@@ -1,0 +1,91 @@
+/* 테이블 검색 조건 */
+.condition{
+    margin-top: rem(30);
+    .condiTit{
+        display: block;
+        // height: rem(22);
+        margin-bottom: rem(9);
+        font-size: rem(15);
+        font-weight: 500;
+        color: $black;
+        &.tabType{
+            margin-top: -8px;
+            // margin-bottom: rem(3);
+            margin-bottom: rem(8    );
+        }
+    }
+    p{
+        &.condiTit{
+            height: rem(22);
+        }
+    }
+    > ul{
+        display: flex;
+        flex-wrap: wrap;
+        li{
+            display: inline-block;
+            input[type=text]{                
+                // width: rem(400);
+                &.dateType{
+                    // width: rem(140);    
+                    background-color: $white;
+                }
+                &.xsSize{
+                    width: rem(130);
+                    height: rem(44);
+                }
+                &.smSize{
+                    width: rem(250);
+                }
+            }
+            //select, input 너비, 높이 등을 기본값으로할건지???
+            & + li{
+                margin-left: rem(15); //0913 J 10 > 15 수정
+            }
+        }
+    }
+    .hasBtn{
+        .button,
+        button{
+            width: rem(44);
+            background: $searchbtnGray;
+            border: 1px solid $searchbtnGray;
+        }
+        .hasTxt{
+            & + label{
+                margin-left: rem(20);
+            }        
+        }
+        input{
+            width: rem(400);
+        }
+    }
+    // label{
+    //     font-weight: 400;
+    // }
+    .select,
+    select{
+        &.autoSize{
+            height: rem(44);
+        }
+    }
+    &.right{
+        ul{
+            justify-content: flex-end;
+        }
+    }
+    &.inList{
+        margin-top: 0;
+        ul{
+            display: grid;
+            row-gap: rem(10);
+            column-gap: rem(10);
+            li {
+                margin-left: 0;
+                &.hasBtn{
+                    display: flex;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.recruitRegister{
+    width: 100%;
+    position: relative;
+    .alertToast{
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .recruitSkill{        
+        .inputGroup{
+            height: rem(80);
+            & + .chipBox{
+                margin-top: rem(10);
+                // padding: 0;
+                .chip{
+                    cursor: pointer;
+                    &.disabled{
+                        opacity: .5;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        }
+    }
+    .col6{
+        row-gap: rem(30);
+        column-gap: rem(45);
+        // grid-template-columns: 5fr 1fr 1.5fr;
+        grid-template-columns: 4fr 170px 2fr;
+    }
+    .col4{
+        width: 80%;
+        row-gap: rem(30);
+        column-gap: rem(45);
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    }
+    ul{
+        li{
+            margin-bottom: 0;
+        }
+    }
+    li{
+        input{
+            &.xsSize{
+                width: rem(58);
+                height: rem(44);
+                text-align: center;
+            }
+            &.dateType{
+                width: rem(168) !important;
+            }
+            &.sm-midSize{
+                width: rem(166);
+            }
+        }
+        .range{
+            margin: 0 rem(16);
+        }
+    }
+}
+
+.recruitRegister{
+    .hasTooltip{
+        .tooltip{
+            &.line3{
+                top: 320px;
+            }
+            &.line4{
+                top: 430px;
+            }
+        }
+    } 
+}
+
+.recruitPeriod,
+.recruitTime{
+    grid-column: 2/4;
+    select{
+        // width: 79px;
+        width: 84px;
+        min-width: auto;
+    }
+}
+.recruitPeriod{
+    .tabType{
+        margin-left: 36px;
+    }
+}
+.recruitWork{
+    grid-column: 1/4;
+}
+
+.recruiterCrew{
+    grid-column: 1/5;
+    // ul{
+    //     display: flex;
+    // }
+    // li{
+    //     margin-right: rem(80);
+    // }
+    ul{
+        li{
+            display: inline-block;
+            width: rem(100);
+            margin: rem(10) 0;
+        }
+    }
+}

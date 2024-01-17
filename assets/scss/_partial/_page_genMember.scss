@@ -1,0 +1,35 @@
+.genMember{
+    .condition{
+        .chkWrap{
+            display: inline-block;
+            margin-right: rem(50);
+        }
+        input[type=text]{    
+            &.dateType{
+                width: rem(145);    
+            }
+        }
+    }
+    .tableTop{
+        margin-top: rem(30);
+    }
+    .tableBox{
+        overflow-y:initial;
+        td{
+            &.nodata{
+                height: rem(220);
+            }
+        }
+        // .tooltip{
+        //     // visibility: visible;
+        //     top: auto;
+        //     bottom:rem(70);
+        //     left: 50%;
+        //     transform: translateX(-50%);
+        //     hr{
+        //         opacity: .5;
+        //         margin-top: rem(2);
+        //     }
+        // }
+    }
+}

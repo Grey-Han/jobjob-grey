@@ -1,0 +1,201 @@
+.hasTooltip,
+.is-signal{
+    position: relative;
+    cursor: pointer;
+    .tooltip{
+        visibility: hidden;
+        display: block;
+        position: absolute;
+        //top: -25%;
+        top: -155%;
+        left: 50%;
+        transform: translateX(-50%);   
+        width: 80%; //230915 추가
+        min-width: rem(100);
+        color: $white;
+        text-align: center;
+        word-break: keep-all;
+        font-size: rem(12);
+        font-weight: 300;
+        //font-weight: 700;
+        padding: rem(10) rem(8) ;
+        border-radius: rem(4);
+        background: $tooltipGray;
+        z-index: 10;
+        &::after{
+            content: " ";
+            position: absolute;
+            top: 99%;
+            left: 50%;
+            margin-left: -6px;
+            border: solid transparent;
+            border-color: transparent;
+            border-top-color: $tooltipGray;
+            border-width: rem(6);
+            pointer-events: none;
+        }
+        &.type2{
+            width: rem(190);
+            text-align: left;
+            top: auto;
+            // left: -87px;
+            left: 50%;
+            bottom: 120%;
+            transform: translateX(-50%);   
+        }
+        &.left{
+            // display: none;
+            // visibility: visible;
+            width: rem(150);
+            top: 0;
+            // left: -205px;
+            // left: -190px;
+            left: -165px;
+            transform: translateY(-15%);
+            text-align: left;
+            &::after{
+                top: 50%;
+                left: 100%;
+                margin-top: -3px;
+                margin-left: 0;
+                border-top-color: transparent;
+                border-left-color: $tooltipGray;
+            }
+            &.is-active{
+                display: block;
+                visibility: visible;
+            }
+            &.line1{
+                // top: 5%;
+                top: 40px;
+            }
+            &.line2{
+                // top: 33%;
+                top: 140px;
+            }
+            &.line3{
+                // top: 55%;
+                top: 230px;
+            }
+            &.line4{
+                // top: 78%;
+                top: 330px;
+            }
+        }
+        &.bottom{
+            display: initial;
+            top: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            &::after{
+                top: -12px;
+                border-top-color: transparent;
+                border-bottom-color: $tooltipGray;
+            }
+        }
+        &.right{
+            width: auto;
+            top: 45%;
+            left: auto;
+            right: -100%;
+            transform: translateY(-50%);   
+            &::after{
+                top: 50%;
+                left: -6px;
+                transform: translateY(-50%);   
+                border-top-color: transparent;
+                border-right-color: $tooltipGray;
+            }
+        }
+        
+        p{
+            font-weight: 700;
+            margin-bottom: rem(6);
+        }
+    }
+    .ellipsis{
+        padding: 0 rem(10);
+        text-align: center;
+    }
+    .qMark{
+        // margin-left: 4px;
+        cursor: pointer;
+    }
+    &:hover{
+        >.tooltip{
+            visibility: visible;
+        }
+    }
+}
+
+
+.phoImg{
+    &.is-signal{
+        .tooltip{
+            // visibility: visible;
+            height: auto;
+            max-height: 72px;
+            text-align: left;
+            bottom: auto;
+            &.right{
+                width: 200px;
+                // width: 160px;?
+                right: -210px;
+                transform: translateY(-30%);
+            }
+            &.left{
+                width: 200px;
+                // width: 160px;?
+                right: -210px;
+                top: 50%;
+                bottom: auto;
+                left: -225px;
+                transform: translateY(-65%);
+            }
+        }
+    }    
+}
+.offeredMem{
+    .phoImg{
+        &.is-signal{
+            .tooltip{
+                &.right{
+                    top: 60%;
+                    right: -183px;     
+                    line-height: 18px;           
+                }
+            }
+        }    
+    }
+}
+.trgBox{
+    .phoImg{
+        &.is-signal{
+            .tooltip{
+                &.right{
+                    right: -215px;  
+                    transform: translateY(-50%);    
+                }
+            }
+        }    
+    }
+    &:nth-child(4n){
+        .phoImg{
+            &.is-signal{
+                .tooltip{
+                    &.right{
+                        right: auto;
+                        left: -212px;
+                        &::after{
+                            top: 50%;
+                            left: auto;
+                            right: -12px;
+                            border-left-color: $tooltipGray;
+                            border-right-color: transparent;
+                        }
+                    }
+                }
+            }    
+        }
+    }
+}
