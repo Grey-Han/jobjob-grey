@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>sitemap</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <style>
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: #333333;
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .sitemap-menu {
+      position: absolute;
+      display: inline-block;
+      overflow-y: scroll;
+      padding-top: 58px;
+      width: 270px;
+      box-sizing: border-box;
+      height: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .sitemap-menu::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .sitemap-menu::-webkit-scrollbar-thumb {
+      background-color: #eee;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .sitemap-menu.mobile {
+      display: none;
+    }
+
+    .viewersize {
+      position: fixed;
+      padding: 10px 0px;
+      background: #3f6b9d;
+      border-radius: 5px;
+      width: 230px;
+      margin: 10px;
+      left: 0;
+      top: 0;
+      color: #fff;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    .sitemap-menu .tabs-btn {
+      position: sticky;
+      top: 20px;
+      padding: 0 10px 10px;
+      ;
+    }
+
+    .sitemap-menu .tabs-btn li {
+      display: inline-block;
+      margin: 0 5px 5px 0;
+      text-align: center;
+      padding: 5px 10px;
+      background: #aaa;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .sitemap-menu .tabs-btn li:last-child {
+      margin-right: 0;
+    }
+
+    .sitemap-menu .tabs-btn li.on {
+      background: #328ff6;
+    }
+
+    .sitemap-menu .tabs-btn li a {
+      display: block;
+    }
+
+    .range-wrap {
+      display: none;
+    }
+
+    .range-wrap.on {
+      display: block;
+    }
+
+    .range-wrap .range {
+      margin-bottom: 20px;
+    }
+
+    .range-wrap .range h3 {
+      font-size: 20px;
+      padding: 0 10px;
+      color: #333333;
+    }
+
+    .range-wrap .range h4 {
+      font-size: 15px;
+      padding: 10px 10px 0;
+      color: #6363ab;
+    }
+
+    .range-wrap .range>ul {
+      border-top: 1px solid #ddd;
+      background: #eeffff;
+      margin-bottom: 20px;
+      padding: 0;
+    }
+
+    .range-wrap:nth-of-type(2) .range>ul {
+      background: #fff2f2
+    }
+
+    .range-wrap:nth-of-type(3) .range>ul {
+      background: #f4efff;
+    }
+
+    .range-wrap:nth-of-type(4) .range>ul {
+      background: #fdfce0;
+    }
+
+    .range-wrap .range li {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      color: #666;
+      font-size: 13px;
+    }
+
+    .range-wrap .range li:after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+
+    .range-wrap .range li .sub-title {
+      display: block;
+    }
+
+    .sub-title em {
+      color: red;
+    }
+
+    .sub-title span {
+      margin-left: 4px;
+      background-color: #48c1c7;
+      color: #ffffff;
+      font-size: 10px;
+      padding: 2px 3px;
+      /* margin-right: 3px; */
+      border-radius: 50%;
+    }
+
+    .range-wrap .range li .btn-wrap {
+      float: right;
+      padding-top: 10px;
+    }
+
+    .range-wrap .range li .btn-wrap .new-win {
+      display: inline-block;
+      border: 1px solid #666;
+      padding: 3px;
+      font-size: 11px;
+    }
+
+    .range-wrap .range li .btn-wrap a.ready {
+      color: #ccc;
+    }
+
+    .range-wrap .range li .btn-wrap a.on {
+      color: #f00;
+    }
+
+    iframe {
+      width: calc(100% - 270px);
+      position: absolute;
+      left: 270px;
+      top: 0;
+      height: 100%;
+      box-sizing: border-box;
+      display: inline-block;
+      border: 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    iframe.mobile {
+      width: 490px;
+      height: 700px;
+      padding: 0;
+      overflow: scroll;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sitemap-menu">
+    <button class="viewersize">모바일size보기</button>
+    <ul class="tabs-btn">
+      <li><a href="javascript:void(0)">v1.0</a></li>
+      <li><a href="javascript:void(0)">v1.5</a></li>
+      <li class="on"><a href="javascript:void(0)">PMS</a></li>
+      <li><a href="javascript:void(0)">스타일가이드</a></li>
+    </ul>
+    <div class="range-wrap">
+      <div class="range">
+        <h3>v1.0</h3>
+        <h4>로그인</h4>
+        <ul>
+          <li>
+            <div class="sub-title">로그인</div>
+            <div class="btn-wrap">
+              <a href="view/login.html" target="viewer">view/login.html</a>
+              <a href="view/login.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">가입신청</div>
+            <div class="btn-wrap">
+              <a href="view/loginJoin.html" target="viewer">view/loginJoin.html</a>
+              <a href="view/loginJoin.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">ID/PW찾기</div>
+            <div class="btn-wrap">
+              <a href="view/loginFind.html" target="viewer">view/loginFind.html</a>
+              <a href="view/loginFind.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>기본화면</h4>
+        <ul>
+          <li>
+            <div class="sub-title">기본화면</div>
+            <div class="btn-wrap">
+              <a href="view/default.html" target="viewer">view/default.html</a>
+              <a href="view/default.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <!-- <h4>레이아웃</h4>
+        <ul>
+          <li>
+            <div class="sub-title">레이아웃</div>
+            <div class="btn-wrap">
+              <a href="view/layout.html" target="viewer">view/layout.html</a>
+              <a href="view/layout.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul> -->
+        <h4>마이프로젝트</h4>
+        <ul>
+          <!-- <li>
+            <div class="sub-title">마이프로젝트 (직무추천, 지원접수)</div>
+            <div class="btn-wrap">
+              <a href="view/myProject.html" target="viewer">view/myProject.html</a>
+              <a href="view/myProject.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li> -->
+          <li>
+            <div class="sub-title">마이프로젝트</div>
+            <div class="btn-wrap">
+              <a href="view/myProject.html" target="viewer">view/myProject.html</a>
+              <a href="view/myProject.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">마이프로젝트 - 결과없음</div>
+            <div class="btn-wrap">
+              <a href="view/myProject_nodata.html" target="viewer">view/myProject_nodata.html</a>
+              <a href="view/myProject_nodata.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>마이피플</h4>
+        <ul>
+          <li>
+            <div class="sub-title">마이피플 - 기본</div>
+            <div class="btn-wrap">
+              <a href="view/myPeople_default.html" target="viewer">view/myPeople_default.html</a>
+              <a href="view/myPeople_default.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">마이피플 - 가용인력</div>
+            <div class="btn-wrap">
+              <a href="view/myPeople01.html" target="viewer">view/myPeople01.html</a>
+              <a href="view/myPeople01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">마이피플 - 추천인력</div>
+            <div class="btn-wrap">
+              <a href="view/myPeople02.html" target="viewer">view/myPeople02.html</a>
+              <a href="view/myPeople02.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">마이피플 - 확정인력</div>
+            <div class="btn-wrap">
+              <a href="view/myPeople03.html" target="viewer">view/myPeople03.html</a>
+              <a href="view/myPeople03.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">마이피플 - 정보없음</div>
+            <div class="btn-wrap">
+              <a href="view/myPeople_nodata.html" target="viewer">view/myPeople_nodata.html</a>
+              <a href="view/myPeople_nodata.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>프로젝트</h4>        
+        <ul>
+          <li>
+            <div class="sub-title">프로젝트 의뢰목록</div>
+            <div class="btn-wrap">
+              <a href="view/projReqList.html" target="viewer">view/projReqList.html</a>
+              <a href="view/projReqList.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">프로젝트 등록</div>
+            <div class="btn-wrap">
+              <a href="view/projRegister.html" target="viewer">view/projRegister.html</a>
+              <a href="view/projRegister.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">프로젝트 진행목록</div>
+            <div class="btn-wrap">
+              <a href="view/projProgList.html" target="viewer">view/projProgList.html</a>
+              <a href="view/projProgList.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <!-- <li>
+            <div class="sub-title">프로젝트 상세</div>
+            <div class="btn-wrap">
+              <a href="view/projDetail.html" target="viewer">view/projDetail.html</a>
+              <a href="view/projDetail.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li> -->
+        </ul>
+        <h4>회원</h4>        
+        <ul>
+          <li>
+            <div class="sub-title">회원</div>
+            <div class="btn-wrap">
+              <a href="view/generalMember.html" target="viewer">view/generalMember.html</a>
+              <a href="view/generalMember.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">회원 - 결과없음</div>
+            <div class="btn-wrap">
+              <a href="view/generalMember_nodata.html" target="viewer">view/generalMember_nodata.html</a>
+              <a href="view/generalMember_nodata.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">회원등록</div>
+            <div class="btn-wrap">
+              <a href="view/memberRegister.html" target="viewer">view/memberRegister.html</a>
+              <a href="view/memberRegister.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">회원상세</div>
+            <div class="btn-wrap">
+              <a href="view/memberDetail.html" target="viewer">view/memberDetail.html</a>
+              <a href="view/memberDetail.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">이력서 목록</div>
+            <div class="btn-wrap">
+              <a href="view/resumeList.html" target="viewer">view/resumeList.html</a>
+              <a href="view/resumeList.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>가용자관리</h4>        
+        <ul>
+          <li>
+            <div class="sub-title">가용자관리</div>
+            <div class="btn-wrap">
+              <a href="view/userManage.html" target="viewer">view/userManage.html</a>
+              <a href="view/userManage.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>시스템관리</h4> 
+        <ul>
+          <li>
+            <div class="sub-title">문자/메일 발송이력</div>
+            <div class="btn-wrap">
+              <a href="view/sendHistory.html" target="viewer">view/sendHistory.html</a>
+              <a href="view/sendHistory.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">문자/메일 발송이력 상세</div>
+            <div class="btn-wrap">
+              <a href="view/sendHisDetail.html" target="viewer">view/sendHisDetail.html</a>
+              <a href="view/sendHisDetail.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">스킬관리</div>
+            <div class="btn-wrap">
+              <a href="view/skillAdmin.html" target="viewer">view/skillAdmin.html</a>
+              <a href="view/skillAdmin.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">직무직군관리</div>
+            <div class="btn-wrap">
+              <a href="view/jobAdmin.html" target="viewer">view/jobAdmin.html</a>
+              <a href="view/jobAdmin.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">메뉴관리</div>
+            <div class="btn-wrap">
+              <a href="view/menuAdmin.html" target="viewer">view/menuAdmin.html</a>
+              <a href="view/menuAdmin.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">권한관리</div>
+            <div class="btn-wrap">
+              <a href="view/rightAdmin.html" target="viewer">view/rightAdmin.html</a>
+              <a href="view/rightAdmin.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">공통코드</div>
+            <div class="btn-wrap">
+              <a href="view/commonCode.html" target="viewer">view/commonCode.html</a>
+              <a href="view/commonCode.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="range-wrap">
+      <div class="range">
+        <h3>v1.5</h3> 
+        <h4>모집공고</h4>
+        <ul>
+          <li>
+            <span class="sub-title">모집공고</span>
+            <div class="btn-wrap">
+              <a href="view/recruitList.html" target="viewer">view/recruitList.html</a>
+              <a href="view/recruitList.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">모집공고 관리</span>
+            <div class="btn-wrap">
+              <a href="view/recruitAdmin.html" target="viewer">view/recruitAdmin.html</a>
+              <a href="view/recruitAdmin.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">모집공고 상세</span>
+            <div class="btn-wrap">
+              <a href="view/recruitDetail.html" target="viewer">view/recruitDetail.html</a>
+              <a href="view/recruitDetail.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">모집공고 등록</span>
+            <div class="btn-wrap">
+              <a href="view/recruitRegister.html" target="viewer">view/recruitRegister.html</a>
+              <a href="view/recruitRegister.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>인재검색</h4>
+        <ul>
+          <li>
+            <span class="sub-title">인재검색</span>
+            <div class="btn-wrap">
+              <a href="view/talentedSearch.html" target="viewer">view/talentedSearch.html</a>
+              <a href="view/talentedSearch.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">보낸제안</span>
+            <div class="btn-wrap">
+              <a href="view/sendedOfferList.html" target="viewer">view/sendedOfferList.html</a>
+              <a href="view/sendedOfferList.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">보낸제안 상세</span>
+            <div class="btn-wrap">
+              <a href="view/sendedOfferDetail.html" target="viewer">view/sendedOfferDetail.html</a>
+              <a href="view/sendedOfferDetail.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>마이크로사이트</h4>
+        <ul>
+          <li>
+            <span class="sub-title">마이크로사이트</span>
+            <div class="btn-wrap">
+              <a href="view/microSite.html" target="viewer">view/microSite.html</a>
+              <a href="view/microSite.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">마이크로사이트 지원하기</span>
+            <div class="btn-wrap">
+              <a href="view/microSite_agree.html" target="viewer">view/microSite_agree.html</a>
+              <a href="view/microSite_agree.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">지원완료</span>
+            <div class="btn-wrap">
+              <a href="view/apply_clear.html" target="viewer">view/apply_clear.html</a>
+              <a href="view/apply_clear.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">이미 지원완료</span>
+            <div class="btn-wrap">
+              <a href="view/apply_already.html" target="viewer">view/apply_already.html</a>
+              <a href="view/apply_already.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">비공개</span>
+            <div class="btn-wrap">
+              <a href="view/closed.html" target="viewer">view/closed.html</a>
+              <a href="view/closed.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">3개월 경과</span>
+            <div class="btn-wrap">
+              <a href="view/closed3m.html" target="viewer">view/closed3m.html</a>
+              <a href="view/closed3m.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>메일포맷</h4>
+        <ul>
+          <li>
+            <span class="sub-title">메일포맷</span>
+            <div class="btn-wrap">
+              <a href="view/mailFormat.html" target="viewer">view/mailFormat.html</a>
+              <a href="view/mailFormat.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">메일알림</span>
+            <div class="btn-wrap">
+              <a href="view/mailFormat_info.html" target="viewer">view/mailFormat_info.html</a>
+              <a href="view/mailFormat_info.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">메일불합격</span>
+            <div class="btn-wrap">
+              <a href="view/mailFormat_member.html" target="viewer">view/mailFormat_member.html</a>
+              <a href="view/mailFormat_member.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">메일인증 - 아이디변경 인증</span>
+            <div class="btn-wrap">
+              <a href="view/mailFormat_id_certify.html" target="viewer">view/mailFormat_id_certify.html</a>
+              <a href="view/mailFormat_id_certify.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">메일인증 - 관리자 인증</span>
+            <div class="btn-wrap">
+              <a href="view/mailFormat_admin_certify.html" target="viewer">view/mailFormat_admin_certify.html</a>
+              <a href="view/mailFormat_admin_certify.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">생년월일체크</span>
+            <div class="btn-wrap">
+              <a href="view/mailConfirm.html" target="viewer">view/mailConfirm.html</a>
+              <a href="view/mailConfirm.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">수신거절확인</span>
+            <div class="btn-wrap">
+              <a href="view/mailRejConfirm.html" target="viewer">view/mailRejConfirm.html</a>
+              <a href="view/mailRejConfirm.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">수신거절완료</span>
+            <div class="btn-wrap">
+              <a href="view/mailRejClear.html" target="viewer">view/mailRejClear.html</a>
+              <a href="view/mailRejClear.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>이미지 시안</h4>
+        <ul>
+          <li>
+            <span class="sub-title">시안 모음 - 모집공고</span>
+            <div class="btn-wrap">
+              <a href="view/draft-recruit.html" target="viewer">view/draft-recruit.html</a>
+              <a href="view/draft-recruit.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">시안 모음 - 마이크로</span>
+            <div class="btn-wrap">
+              <a href="view/draft-micro.html" target="viewer">view/draft-micro.html</a>
+              <a href="view/draft-micro.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">시안 모음 - 인재검색/제안하기</span>
+            <div class="btn-wrap">
+              <a href="view/draft-talent.html" target="viewer">view/draft-talent.html</a>
+              <a href="view/draft-talent.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="range-wrap on">
+      <div class="range">
+        <h3>PMS</h3>
+        
+        <h4>로그인</h4>
+        <ul>
+          <li>
+            <span class="sub-title">로그인</span>
+            <div class="btn-wrap">
+              <a href="view/login_pms.html" target="viewer">view/login_pms.html</a>
+              <a href="view/login_pms.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>대시보드</h4>
+        <ul>
+          <li>
+            <span class="sub-title">대시보드</span>
+            <div class="btn-wrap">
+              <a href="view/dashboard.html" target="viewer">view/dashboard.html</a>
+              <a href="view/dashboard.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>사업현황</h4>
+        <ul>
+          <li>
+            <span class="sub-title">거래처(매입)</span>
+            <div class="btn-wrap">
+              <a href="view/clientBuy.html" target="viewer">view/clientBuy.html</a>
+              <a href="view/clientBuy.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">거래처(매출)</span>
+            <div class="btn-wrap">
+              <a href="view/clientSales.html" target="viewer">view/clientSales.html</a>
+              <a href="view/clientSales.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">거래처 등록</span>
+            <div class="btn-wrap">
+              <a href="view/clientRegister.html" target="viewer">view/clientRegister.html</a>
+              <a href="view/clientRegister.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">사업현황</span>
+            <div class="btn-wrap">
+              <a href="view/bizState.html" target="viewer">view/bizState.html</a>
+              <a href="view/bizState.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">사업현황 상세</span>
+            <div class="btn-wrap">
+              <a href="view/bizStateRegister.html" target="viewer">view/bizStateRegister.html</a>
+              <a href="view/bizStateRegister.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+
+        
+        <h4>매출매입 집계</h4>
+        <ul>
+          <li>
+            <span class="sub-title">프로젝트별 매출집계</span>
+            <div class="btn-wrap">
+              <a href="view/projTotal.html" target="viewer">view/projTotal.html</a>
+              <a href="view/projTotal.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">투입유형별 매입/매출</span>
+            <div class="btn-wrap">
+              <a href="view/insertTotal.html" target="viewer">view/insertTotal.html</a>
+              <a href="view/insertTotal.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">외주 매입/매출</span>
+            <div class="btn-wrap">
+              <a href="view/sourcingTotal.html" target="viewer">view/sourcingTotal.html</a>
+              <a href="view/sourcingTotal.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <!-- <li>
+            <span class="sub-title">매출원장</span>
+            <div class="btn-wrap">
+              <a href="view/salesLedger.html" target="viewer">view/salesLedger.html</a>
+              <a href="view/salesLedger.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li> -->
+          <li>
+            <span class="sub-title">정직원 매입/매출</span>
+            <div class="btn-wrap">
+              <a href="view/employeeTotal.html" target="viewer">view/employeeTotal.html</a>
+              <a href="view/employeeTotal.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+
+        
+        <h4>매입원장/고용산재 대사</h4>
+        <ul>
+          <li>
+            <span class="sub-title">매입원장</span>
+            <div class="btn-wrap">
+              <a href="view/PurchaseLedger.html" target="viewer">view/PurchaseLedger.html</a>
+              <a href="view/PurchaseLedger.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">사업소득명세서</span>
+            <div class="btn-wrap">
+              <a href="view/bizIncomeReport.html" target="viewer">view/bizIncomeReport.html</a>
+              <a href="view/bizIncomeReport.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">고용보험료 대사</span>
+            <div class="btn-wrap">
+              <a href="view/EICheck.html" target="viewer">view/EICheck.html</a>
+              <a href="view/EICheck.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">산재보험료 대사</span>
+            <div class="btn-wrap">
+              <a href="view/WCCheck.html" target="viewer">view/WCCheck.html</a>
+              <a href="view/WCCheck.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+
+
+        <h4>이미지 시안</h4>
+        <ul>
+          <li>
+            <span class="sub-title">시안 모음 - 사업현황</span>
+            <div class="btn-wrap">
+              <a href="view/draft-biz.html" target="viewer">view/draft-biz.html</a>
+              <a href="view/draft-biz.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="range-wrap">
+      <div class="range">
+        <h3>스타일가이드</h3>
+        <h4>스타일가이드</h4>
+        <ul>
+          <li>
+            <span class="sub-title">관리자 스타일가이드</span>
+            <div class="btn-wrap">
+              <a href="view/styleGuide.html" target="viewer">view/styleGuide.html</a>
+              <a href="view/styleGuide.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>모달창</h4>
+        <ul>
+          <li>
+            <span class="sub-title">모달창</span>
+            <div class="btn-wrap">
+              <a href="view/modal.html" target="viewer">view/modal.html</a>
+              <a href="view/modal.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+        <h4>에러화면</h4>        
+        <ul>
+          <li>
+            <div class="sub-title">404에러</div>
+            <div class="btn-wrap">
+              <a href="view/error404.html" target="viewer">view/error404.html</a>
+              <a href="view/error404.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <div class="sub-title">500에러</div>
+            <div class="btn-wrap">
+              <a href="view/error500.html" target="viewer">view/error500.html</a>
+              <a href="view/error500.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <iframe src="" name="viewer" class="" style="overflow:hidden;"></iframe>
+
+  <script>
+    // link
+    var links = $('.range a');
+    for (i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", function () {
+        for (i = 0; i < links.length; i++) {
+          links[i].classList.remove('on');
+
+        }
+        this.classList.add('on');
+      })
+
+    }
+    // tab
+    $('.tabs-btn a').click(function () {
+      $(this).parent('li').addClass('on').siblings().removeClass('on');
+      var index = $(this).parent('li').index();
+      $('.range-wrap').eq(index).addClass('on').siblings().removeClass('on');;
+    });
+
+    $('.viewersize').click(function () {
+
+      $('iframe').toggleClass('mobile');
+    });
+
+
+    $('.title.lg').click(function () {
+      $(this).toggleClass('on');
+      $(this).next("div.range").slideToggle();
+    });
+    $('.title.lg').click();
+  </script>
+</body>
+
+</html>
